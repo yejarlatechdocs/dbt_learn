@@ -1,0 +1,13 @@
+dbt_explore:
+  outputs:
+    edw_dev:
+      account: bz58850.central-india.azure
+      database: EDW_DEV
+      password: "Dataengineer@123"
+      role: ACCOUNTADMIN
+      schema: STG
+      threads: 8
+      type: snowflake
+      user: snowworld
+      warehouse: COMPUTE_WH
+  target: edw_dev
