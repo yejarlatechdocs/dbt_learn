@@ -88,7 +88,7 @@ saved_queries:
     description: Relevant order metrics
     query_params:
       metrics:
-        - orders
+        - orders_count
         - large_order
         - order_total
       group_by:
