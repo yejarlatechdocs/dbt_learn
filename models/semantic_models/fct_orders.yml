@@ -88,8 +88,7 @@ saved_queries:
     description: Relevant order metrics
     query_params:
       metrics:
-        - orders_count
-        - large_order
+        - large_orders
         - order_total
       group_by:
         - Entity('order_id')
