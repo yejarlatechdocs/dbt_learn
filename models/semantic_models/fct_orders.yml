@@ -93,6 +93,7 @@ saved_queries:
       group_by:
         - Entity('order_id')
         - TimeDimension('metric_time', 'day')
+
     exports:
       - name: order_metrics
         config:
