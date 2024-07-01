@@ -24,6 +24,11 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
+saved-queries:
+  my_saved_query:
+    config:
+      +cache:
+        enabled: true
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
