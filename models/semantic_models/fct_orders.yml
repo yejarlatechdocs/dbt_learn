@@ -83,3 +83,19 @@ metrics:
       metrics:
         - name: large_orders
         - name: order_count
+saved_queries:
+  - name: order_metrics
+    description: Relevant order metrics
+    query_params:
+      metrics:
+        - orders
+        - large_order
+        - order_total
+      group_by:
+        - Entity('order_id')
+        - TimeDimension('metric_time', 'day')
+        - Dimension('customer__customer_name')
+    exports:
+      - name: order_metrics
+        config:
+          export_as: table # Options available: table, view
