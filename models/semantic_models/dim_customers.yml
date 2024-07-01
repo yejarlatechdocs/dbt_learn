@@ -33,7 +33,6 @@ semantic_models:
       - name: customers
         expr: customer_id
         agg: count_distinct
-
 metrics:
   - name: "customers_with_orders"
     label: "customers_with_orders"
@@ -41,3 +40,18 @@ metrics:
     type: simple
     type_params:
       measure: customers
+       
+saved_queries:
+  - name: order_metrics
+    description: Relevant order metrics
+    query_params:
+      metrics:
+        - customers_with_orders
+      group_by:
+        - Entity('order_id')
+        - TimeDimension('metric_time', 'day')
+        - Dimension('customer__customer_name')
+    exports:
+      - name: order_metrics
+        config:
+          export_as: table # Options available: table, view
